@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "predev": "if [ -f .grunt_pid ]; then kill $(cat .grunt_pid) || true && rm .grunt_pid; fi",
+    "dev": "grunt & echo $! > .grunt_pid && npm start"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -15,6 +17,7 @@
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0"
   }
