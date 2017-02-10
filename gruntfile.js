@@ -13,9 +13,22 @@ module.exports = function(grunt) {
 
         // https://github.com/gruntjs/grunt-contrib-watch
         watch: {
-            files: ['gruntfile.js', 'app/stylesheets/*'],
-            tasks: ['stylus']
-        }
+            css: {
+                files: ['gruntfile.js', 'app/stylesheets/*'],
+                tasks: ['stylus'],
+                options: { livereload: 10000 },
+            },
+            js: {
+                files: ['gruntfile.js', 'app/js/*'],
+                tasks: [],
+                options: { livereload: 10000 },
+            },
+            html: {
+                files: ['app/views/*'],
+                tasks: [],
+                options: { livereload: 10000 },
+            },
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-stylus');
