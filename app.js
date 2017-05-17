@@ -9,7 +9,7 @@ const routes = require('./routes/index');
 
 let app = express();
 app.locals.config = config;
-if (app.get('env') === 'development') app.locals,dev = true;
+if (app.get('env') === 'development') app.locals.dev = true;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app', 'views'));
